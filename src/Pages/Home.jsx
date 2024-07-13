@@ -1,9 +1,13 @@
+import Banner from "../components/Banner";
+import Slider from "../layouts/Slider";
 
 
 const Home = () => {
     return (
         <div>
-            <h1>Home components</h1>
+            
+            <Slider></Slider>
+            <Banner></Banner>
         </div>
     );
 };

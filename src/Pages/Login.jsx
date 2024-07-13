@@ -68,10 +68,10 @@ const Login = () => {
  
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-gradient-to-r from-green-300 to-indigo-500 rounded-xl p-8 min-h-screen">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left lg:flex-row-reverse">
-          <h1 className="text-xl md:text-2xl font-bold my-6">
+          <h1 className="text-xl md:text-3xl text-white font-bold my-6">
             Please Login now!
           </h1>
           <div>
@@ -139,7 +139,6 @@ const Login = () => {
                 <FaGoogle className="text-red-600"></FaGoogle> Google
               </button>
             </div>
-            
           </form>
         </div>
       </div>

@@ -6,6 +6,8 @@ const Navbar = () => {
   
 
   const { user, logOut } = useContext(AuthContext);
+
+
   const links = (
     <>
       <li>
@@ -16,12 +18,19 @@ const Navbar = () => {
         <NavLink to="/query"> Query</NavLink>
       </li>
       {/* <li><NavLink to="/about">About</NavLink></li> */}
-      <li>
-        <NavLink to="/addTouristSpot">Add Tourists Spot</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myList">My List</NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/recommendations">Recommendations For Me</NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-queries">My Queries</NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-recommendations">My Recommendations</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 

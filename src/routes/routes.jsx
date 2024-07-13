@@ -3,6 +3,7 @@ import Root from "../Root/Root";
 import Home from "../Pages/Home";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import AddQuery from "../layouts/AddQuery";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
                 path: '/register',
                 element:<Register></Register>
             },
+            {
+                path: '/add-query',
+                element:<AddQuery></AddQuery>
+            }
         ]
     }
 ])

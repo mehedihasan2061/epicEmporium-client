@@ -80,7 +80,7 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-gradient-to-r from-green-300 to-indigo-500 rounded-xl p-8 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left m-4">
           <h1 className="text-xl md:text-3xl font-bold my-6">
