@@ -111,11 +111,18 @@ const Navbar = () => {
               </a>
             </li>
             {user ? (
-              <li>
-                <button className="btn" onClick={handleLogOut}>
-                  Log Out
-                </button>
-              </li>
+              <>
+                <li className="bg-purple-600 p-1 rounded-xl text-white font-semibold">
+                  <Link to='/add-query'>
+                    <button className="flex justify-center">Add Query</button>
+                  </Link>
+                </li>
+                <li>
+                  <button className="btn" onClick={handleLogOut}>
+                    Log Out
+                  </button>
+                </li>
+              </>
             ) : (
               <Link to="/login" className="flex justify-center ">
                 <button className="btn">Log In</button>

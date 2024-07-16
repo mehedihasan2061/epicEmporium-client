@@ -1,4 +1,5 @@
 import Banner from "../components/Banner";
+import Queries from "../components/Queries";
 import Slider from "../layouts/Slider";
 
 
@@ -8,6 +9,7 @@ const Home = () => {
             
             <Slider></Slider>
             <Banner></Banner>
+            <Queries></Queries>
         </div>
     );
 };

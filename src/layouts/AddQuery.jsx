@@ -1,25 +1,29 @@
 import Lottie from "react-lottie";
 import addQuery from "../lottie/Animation - 1720838226931.json"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 // import axios from "axios";
 
 const AddQuery = () => {
     const { user } = useContext(AuthContext)
     const name = user?.displayName
     const email = user?.email
-    const photo = user?.photoURL;
+  const photo = user?.photoURL;
+  
+  const [startDate, setStartDate] = useState(new Date());
 
 
-    const handleAddQuery = e => {
-        e.preventDefault()
-        const form = e.target;
-        const productName = form.name.value;
-        const productBrand = form.brand.value;
-        const productUrl = form.photoUrl.value;
-        const queryTitle = form.query_title.value;
-        const product_Boycott = form.product_boycott.value;
-        const date = form.date.value;
+  const handleAddQuery = e => {
+    e.preventDefault()
+    const form = e.target;
+    const productName = form.name.value;
+    const productBrand = form.brand.value;
+    const productUrl = form.photoUrl.value;
+    const queryTitle = form.query_title.value;
+    const product_Boycott = form.product_boycott.value;
+    const date = startDate;
         const productInfo = {
             productName,
             productBrand,
@@ -142,20 +146,15 @@ const AddQuery = () => {
               required
             />
           </div>
-          <div className="mb-5">
-            <label
-              htmlFor="repeat-password"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Date
-            </label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              placeholder="Boycotting Reason Details"
-              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-              required
+
+          <div className="flex flex-col gap-2 ">
+            <label className="text-gray-700">Deadline</label>
+
+            {/* Date Picker Input Field */}
+            <DatePicker
+              className="border p-2 mb-6 rounded-md"
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
             />
           </div>
 
