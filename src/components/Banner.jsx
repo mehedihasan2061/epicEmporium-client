@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
-import img from "../assets/the-printable-concept-KWylPhCFMaY-unsplash.jpg"
+// import img from "../assets/the-printable-concept-KWylPhCFMaY-unsplash.jpg"
+import img from "../assets/images (5).jfif"
+import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
     return (
-      <div>
-        <h1>product</h1>
-        <div className=" sm:w-full flex justify-center items-center gap-12 p-6 rounded-xl  bg-gradient-to-r from-[#8e62db] to-red-400 ">
+      <div className="container mx-auto">
+        <div className=" sm:w-full flex flex-col md:flex-row justify-center items-center gap-12 p-2 md:p-6 rounded-xl my-10  bg-gradient-to-r from-[#80466c] to-sky-900 ">
           <div className="md:w-[50%]">
-            <img className=" h-[500px] w-full rounded-xl" src={img} alt="" />
+            <img className=" md:h-[500px] w-full rounded-xl" src={img} alt="" />
           </div>
           <div className="md:w-[50%]">
-            <h1 className="text-3xl font-bold font-caveat ">Hi everyone</h1>
-            <p className="text-xl font-semibold font-lato text-white">
+            <h1 className="text-3xl flex justify-center sm:text-center font-bold font-caveat text-blue-600 ">
+              <Typewriter
+                words={["Hi everyone"]}
+                loop={0}
+                cursor
+                cursorStyle="/"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              ></Typewriter>
+            </h1>
+            <p className="sm:text-center md:text-xl font-semibold font-lato text-white">
               Distinctively grow resource sucking manufactured products after
               stand-alone data. Compellingly iterate magnetic schemas via
               covalent manufactured products. Synergistically streamline
@@ -25,12 +36,13 @@ const Banner = () => {
               empowerment.
             </p>
             <Link to="/add-query">
-              <button className="bg-gradient-to-r from-[#8e62db] to-red-600   p-4 text-xl text-white font-bold font-caveat rounded-xl my-3">
+              <button className="w-1/2 mx-auto flex justify-center bg-gradient-to-r from-[#8e62db] to-red-600   p-4 text-xl text-white font-bold font-caveat rounded-xl my-3">
                 ADD Queries
               </button>
             </Link>
           </div>
         </div>
+
         {/* <div id="slide6" className="carousel-item flex relative w-full ">
           <img src={img} className="w-full h-[600px] rounded-xl " />
           <div className="absolute  rounded-xl left-0 h-full  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0 ">

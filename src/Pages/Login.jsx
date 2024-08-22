@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import Swal from "sweetalert2";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash,  FaGoogle } from "react-icons/fa6";
@@ -8,11 +8,13 @@ import login from "../lottie/login/Animation - 1719690115143.json"
 // import Lottie from "react-lottie";
 import Lottie from "react-lottie"
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { signIn, googleLogin } = useContext(AuthContext);
   const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -39,12 +41,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        Swal.fire({
-          title: "success",
-          text: "User Login Successfully",
-          icon: "success",
-          confirmButtonText: "Ok",
-        });
+       toast.success("User Login successfully")
         form.reset("");
         navigate(location?.state ? location.state : "/");
       })
@@ -68,7 +65,7 @@ const Login = () => {
  
 
   return (
-    <div className="hero bg-gradient-to-r from-green-300 to-indigo-500 rounded-xl p-8 min-h-screen">
+    <div className="hero bg-gradient-to-r from-green-300 to-indigo-500 rounded-xl md:p-8 min-h-screen">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left lg:flex-row-reverse">
           <h1 className="text-xl md:text-3xl text-white font-bold my-6">
@@ -79,7 +76,7 @@ const Login = () => {
           </div>
         </div>
         <div className="card bg-base-100 md:w-full max-w-sm shrink-0 shadow-2xl">
-          <form onSubmit={handleLogin} className="card-body">
+          <form onSubmit={handleLogin} className="card-body ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>

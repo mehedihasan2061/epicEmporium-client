@@ -6,5 +6,8 @@ export default {
   },
   // eslint-disable-next-line no-undef
   plugins: [require("daisyui"), require("flowbite/plugin")],
+  daisyui: {
+    themes: ["light", "dracula"],
+  },
 };
 
