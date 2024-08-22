@@ -1,7 +1,7 @@
 # EpicEmporium
 
 ## Live Site URL
-- **Responsive Design**:[ Live Link](https://epicemporium-e6ce4.web.app/)
+- **EpicEmporium**:[ Live Link](https://epicemporium-e6ce4.web.app/)
 
 ## Features
 - **EpicEmporium**: Our website is fully responsive and looks great on all devices.
