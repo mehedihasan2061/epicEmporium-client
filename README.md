@@ -1,8 +1,20 @@
-# React + Vite
+# EpicEmporium
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Site URL
+- **Responsive Design**:[ Live Link](https://epicemporium-e6ce4.web.app/)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Responsive Design**: Our website is fully responsive and looks great on all devices.
+- **Css frameWork**: tailwindCss,DaisyUI.
+- **Css frameWork**: tailwindCss,DaisyUI.
+- **Css frameWork**: merakiUI.
+- **Css frameWork**: Swiper.
+## Package Link
+-[React-Lottie](https://www.npmjs.com/package/react-lottie)
+-[React-Simple-typeWriter](https://www.npmjs.com/package/react-simple-typewriter)
+- [Express.js](https://expressjs.com/en/starter/hello-world.html) 
+- [MongoDB](https://www.mongodb.com/products/platform/atlas-database) 
+- [Jwt](https://jwt.io/) 
+- [Axios](https://axios-http.com/docs/intro) 
+- [Axios Interceptor](https://axios-http.com/docs/interceptors) 
+- [TanStack Query](https://tanstack.com/query/latest) 
