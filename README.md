@@ -4,7 +4,7 @@
 - **Responsive Design**:[ Live Link](https://epicemporium-e6ce4.web.app/)
 
 ## Features
-- **Responsive Design**: Our website is fully responsive and looks great on all devices.
+- **EpicEmporium**: Our website is fully responsive and looks great on all devices.
 - **Css frameWork**: tailwindCss,DaisyUI.
 - **Css frameWork**: tailwindCss,DaisyUI.
 - **Css frameWork**: merakiUI.
