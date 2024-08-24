@@ -25,7 +25,7 @@ const AllQuery = () => {
   // console.log(products);
     return (
       <div>
-        <h1 className="text-orange-500 font-bold">All Recommendation : {products.length} </h1>
+        <h1 className="text-orange-500 font-bold my-10">All Recommendation : {products.length} </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product) => (
             <div
