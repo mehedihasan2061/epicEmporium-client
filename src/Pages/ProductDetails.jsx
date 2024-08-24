@@ -11,7 +11,7 @@ const ProductDetails = () => {
   const product = useLoaderData()
   const navigate=useNavigate()
     const [startDate, setStartDate] = useState(new Date());
-    // console.log(product);
+    
     const {
         _id,
       productName,
