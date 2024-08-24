@@ -17,10 +17,10 @@ const Update = () => {
        productBrand,
        productUrl,
        date,
-       product_Boycott,
+       product_boycott,
       
   } = product || {};
-  console.log(productName);
+  // console.log(product_boycott);
      const { user } = useAuth();
      const [startDate, setStartDate] = useState(
        new Date(date) || new Date()
@@ -33,7 +33,7 @@ const Update = () => {
        const date = startDate;
        const productUrl = form.photoUrl.value;
        const queryTitle = form.query_title.value;
-       const product_Boycott = form.product_boycott.value;
+       const product_boycott = form.product_boycott.value;
        
        const productData = {
          productName,
@@ -41,7 +41,7 @@ const Update = () => {
          productUrl,
          date,
          queryTitle,
-         product_Boycott,
+         product_boycott,
 
          owner: {
            email: user?.email,
@@ -53,7 +53,7 @@ const Update = () => {
 
        try {
          const { data } = await axios.put(
-           `${import.meta.env.VITE_API_URL}/update/${_id}`,
+           `${import.meta.env.VITE_API_URL}/product/${_id}`,
            productData
          );
          console.log(data);
@@ -149,7 +149,7 @@ const Update = () => {
               type="text"
               id="product-boycott"
               name="product_boycott"
-              defaultValue={product_Boycott}
+              defaultValue={product_boycott}
               placeholder="Boycotting Reason Details"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
               required

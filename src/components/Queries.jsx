@@ -21,7 +21,7 @@ const Queries = () => {
         <h1 className="text-2xl md:text-4xl font-bold text-center text-green-500">
           <Typewriter
             words={["Browse Products By Card"]}
-            loop={5}
+            loop={0}
             cursor
             cursorStyle="_"
             typeSpeed={70}

@@ -17,9 +17,7 @@ const {
   product_boycott,
   owner,
 } = product;
-// const {user}=useAuth()
-// console.log(product);
-// console.log(product);
+
   return (
     <>
       {!user ? (
@@ -52,10 +50,10 @@ const {
                   tabIndex="0"
                   role="link"
                 >
-                  {queryTitle?.substring(0, 70)}...
+                  {queryTitle?.substring(0, 60)}...
                 </a>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                  {product_boycott?.substring(0, 100)}...
+                  {product_boycott?.substring(0, 60)}...
                 </p>
               </div>
 

@@ -72,7 +72,11 @@ const ProductDetails = () => {
             Post: {new Date(date).toLocaleDateString()}
           </span>
           <span>
-            <img className="border-2 w-24 p-4  h-24 border-purple-600 rounded-full" src={productUrl} alt="" />
+            <img
+              className="border-2 w-24 p-4  h-24 border-purple-600 rounded-full"
+              src={productUrl}
+              alt=""
+            />
           </span>
           <span className="px-4 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full ">
             {productBrand}
@@ -90,7 +94,9 @@ const ProductDetails = () => {
           </p>
           <div className="flex items-center gap-5">
             <div>
-              <p className="mt-2 text-sm  text-gray-600 ">Name: {owner?.name}</p>
+              <p className="mt-2 text-sm  text-gray-600 ">
+                Name: {owner?.name}
+              </p>
               <p className="mt-2 text-sm  text-gray-600 ">
                 Email: {owner?.email}
               </p>
@@ -102,7 +108,7 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* Place A Bid Form */}
+      {/* Place A  Recommend Form */}
       <section className="p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]">
         <h2 className="text-lg font-semibold text-gray-700 capitalize ">
           Add A Recommendation
@@ -118,6 +124,7 @@ const ProductDetails = () => {
                 id="recommendTitle"
                 type="text"
                 name="recommendTitle"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>
@@ -130,6 +137,7 @@ const ProductDetails = () => {
                 id="emailAddress"
                 type="text"
                 name="recommendName"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>
@@ -142,6 +150,7 @@ const ProductDetails = () => {
                 id="productImage"
                 name="recommendImage"
                 type="text"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>
@@ -163,6 +172,7 @@ const ProductDetails = () => {
                 id="recommendReason"
                 name="recommendReason"
                 type="text"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>

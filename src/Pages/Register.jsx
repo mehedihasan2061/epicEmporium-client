@@ -10,9 +10,11 @@ import { FaEyeSlash } from "react-icons/fa6";
 import Lottie from "react-lottie";
 import toast from "react-hot-toast";
 import useAuth from "../hooks/useAuth";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useAuth();
+  const { createUser, updateUserProfile, user, setUser } = useAuth();
+  const axiosSecure=useAxiosSecure()
   const navigate=useNavigate()
   // const [success, setSuccess] = useState('')
   const [registerError, setRegisterError] = useState("");
@@ -27,7 +29,7 @@ const Register = () => {
       },
     };
 
-  const handleRegister = (e) => {
+  const handleRegister =async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -52,29 +54,22 @@ const Register = () => {
     //    setRegisterError("Please provide at least one special character");
     //    return;
     //  }
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate('/login')
-        toast.success('User Create Successfully')
-
-        updateUserProfile(name, photo)
-          .then((result) => {
-            const user = result.user;
-            console.log(user);
-
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-
-        form.reset("");
-      })
-      .catch((error) => {
-        console.log(error.message);
-        setRegisterError(error.message);
-      });
+     try {
+         const result=   await createUser(email, password)
+            toast.success("User create Successfull")
+            await updateUserProfile(name, photo)
+            setUser({...user,displayName:name,photoURL:photo})
+          navigate("/login")
+           const { data } = await axiosSecure.post(
+             `/jwt`,
+             { email: result?.user.email },
+             
+           );
+           console.log(data);
+        } catch (err) {
+            console.log(err?.message);
+            toast.error(err?.message)
+        }
   };
 
   return (

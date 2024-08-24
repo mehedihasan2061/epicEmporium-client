@@ -12,7 +12,7 @@ const QueryDetails = () => {
       productBrand,
       productUrl,
       queryTitle,
-      product_Boycott,
+      product_boycott,
     } = product;
     return (
       <div>
@@ -36,7 +36,7 @@ const QueryDetails = () => {
                 <span className="text-green-500 font-bold">
                   Alternation Reason:{" "}
                 </span>{" "}
-                {product_Boycott}
+                {product_boycott}
               </p>
               <div className="card-actions justify-end">
                 <div className="badge bg-green-500 text-white badge-outline">

@@ -10,10 +10,20 @@ import Lottie from "react-lottie"
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
+// import useAxiosSecure from "../hooks/useAxiosSecure";
+import axios from "axios";
+
+
 const Login = () => {
   const { signIn, googleLogin } = useContext(AuthContext);
-  const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  // const axiosSecure=useAxiosSecure()
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  console.log(location);
+  const from = location.state || "/";
+  // const [loginError, setLoginError] = useState("");
   
   const defaultOptions = {
     loop: true,
@@ -24,10 +34,10 @@ const Login = () => {
     },
   };
 
-  const location = useLocation();
-  console.log(location.pathname);
-  const navigate = useNavigate();
-  const handleLogin = (e) => {
+  
+
+
+  const handleLogin =async (e) => {
     e.preventDefault();
     const form = e.target;
 
@@ -35,32 +45,34 @@ const Login = () => {
 
     const password = form.password.value;
     console.log(email, password);
-    setLoginError(" ");
+    
 
-    signIn(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-       toast.success("User Login successfully")
-        form.reset("");
-        navigate(location?.state ? location.state : "/");
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoginError(error.message);
-      });
+     const result= await signIn(email, password)
+      navigate(from, { replace:true});
+      toast.success("User Login successfully");
+       const { data } = await axios.post(
+         `${import.meta.env.VITE_API_URL}/jwt`,
+         { email: result?.user.email },{withCredentials:true}
+       );
+       
   };
+  
 
-  const handleGoogle = () => {
-    googleLogin()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate(location?.state ? location.state : "/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleGoogle =async () => {
+    try {
+        const result = await googleLogin();
+        console.log("Sign In data==>", result);
+        navigate("/");
+        toast.success("User Login successfully");
+        const { data } = await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
+          { email: result?.user?.email },{withCredentials:true}
+        );
+        console.log(data);
+      } catch (err) {
+        console.log(err?.message);
+        toast.error(err?.message);
+      }
   };
  
 
@@ -110,9 +122,9 @@ const Login = () => {
                   <FaEye onClick={() => setShowPassword(!showPassword)}></FaEye>
                 )}
               </div>
-              {loginError && (
+              {/* {loginError && (
                 <p className="text-red-600 font-bold">{loginError}</p>
-              )}
+              )} */}
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?

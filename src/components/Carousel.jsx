@@ -12,8 +12,8 @@ import Slide from "./Slide";
 
 import bgimg1 from "../assets/eniko-kis-KsLPTsYaqIQ-unsplash.jpg";
 import bgimg2 from "../assets/c-d-x-PDX_a_82obo-unsplash.jpg";
-import bgimg3 from "../assets/images (5).jfif";
-import bgimg4 from "../assets/images (6).jfif";
+import bgimg3 from "../assets/fernando-andrade-potCPE_Cw8A-unsplash.jpg";
+import bgimg4 from "../assets/nataliya-melnychuk-51sGDpm5S78-unsplash.jpg";
 
 export default function Carousel() {
   return (
@@ -36,25 +36,25 @@ export default function Carousel() {
         <SwiperSlide>
           <Slide
             image={bgimg1}
-            text="Get Your Web Development Projects Done in minutes"
+            text="A camera is a device that captures light and records it as an image"
           />
         </SwiperSlide>
         <SwiperSlide>
           <Slide
             image={bgimg2}
-            text="Get Your Graphics Design Projects Done in minutes"
+            text="Immerse yourself in crystal-clear audio with our state-of-the-art headphones."
           />
         </SwiperSlide>
         <SwiperSlide>
           <Slide
             image={bgimg3}
-            text="Start Your Digital Marketing Campaigns up n running"
+            text="Indulge in the art of fragrance with our signature perfume, crafted to capture the essence of elegance and individuality"
           />
         </SwiperSlide>
         <SwiperSlide>
           <Slide
             image={bgimg4}
-            text="Start Your Digital Marketing Campaigns up n running"
+            text="Discover the ultimate solution for fresh, clear, and glowing skin with our gentle face wash"
           />
         </SwiperSlide>
       </Swiper>
